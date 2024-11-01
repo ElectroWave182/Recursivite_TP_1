@@ -1,0 +1,28 @@
+# Récursivement, une chaîne de caractères est-elle un palindrome ?
+
+def pale(mot):
+
+    if len(mot) < 2:
+        return True
+
+    if mot[0] != mot[-1]:
+        return False
+
+    red = mot[1 : -1]
+    return pale(red)
+
+
+# Récursivement, calculer la moyenne des entiers d'une liste
+
+def somme(liste):
+
+    if liste == []:
+        return 0
+
+    return liste[-1] + somme(liste[: -1])
+
+def moy(liste):
+
+    assert liste != [], "Erreur : la liste est vide"
+
+    return somme(liste) / len(liste)
